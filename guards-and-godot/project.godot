@@ -13,14 +13,21 @@ _global_script_classes=[ {
 "class": "TurnQueue",
 "language": "GDScript",
 "path": "res://TurnQueue.gd"
+}, {
+"base": "Node2D",
+"class": "actor",
+"language": "GDScript",
+"path": "res://actor.gd"
 } ]
 _global_script_class_icons={
-"TurnQueue": ""
+"TurnQueue": "",
+"actor": ""
 }
 
 [application]
 
 config/name="guards-and-godot"
+run/main_scene="res://TurnQueue.tscn"
 config/icon="res://icon.png"
 
 [rendering]

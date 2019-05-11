@@ -2,15 +2,23 @@ extends Node2D
 
 class_name TurnQueue
 
-var active_character
+var pos: Vector2
 
 func initialize():
-	active_character = get_child(0)
+	pass
 
-func play_turn():
-	yield(active_character.play_turn(), "completed")
-	var new_index : int = (active_character.get_index() +1) % get_child_count()
-	active_character = get_child(new_index)
-# classe actor
-#actor.prepare_turn
-#actor.play_turn
+func play_turn(input_key):
+
+	for child in get_children():
+		child.prepare_turn(input_key)
+		child.play_turn()
+
+func _input(event):
+	if event.is_action_pressed("ui_down"):
+		play_turn("ui_down")
+	if event.is_action_pressed("ui_up"):
+		play_turn("ui_up")
+	if event.is_action_pressed("ui_left"):
+		play_turn("ui_left")
+	if event.is_action_pressed("ui_right"):
+		play_turn("ui_right")
