@@ -10,18 +10,18 @@ config_version=4
 
 _global_script_classes=[ {
 "base": "Node2D",
+"class": "Actor",
+"language": "GDScript",
+"path": "res://Actor.gd"
+}, {
+"base": "Node2D",
 "class": "TurnQueue",
 "language": "GDScript",
 "path": "res://TurnQueue.gd"
-}, {
-"base": "Node2D",
-"class": "actor",
-"language": "GDScript",
-"path": "res://actor.gd"
 } ]
 _global_script_class_icons={
-"TurnQueue": "",
-"actor": ""
+"Actor": "",
+"TurnQueue": ""
 }
 
 [application]

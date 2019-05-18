@@ -1,12 +1,12 @@
 extends Node2D
 
-class_name actor
-
+class_name Actor
 
 export var animation_move: float = 0 setget set_animation_move
 
 var next_grid_pos: Vector2
 var grid_pos: Vector2
+
 
 func prepare_turn(event):
   next_grid_pos = grid_pos + get_delta_pos_from_dir(event)
@@ -19,7 +19,7 @@ func play_turn():
 
 # progress goes from 0 to 1
 func set_animation_move(progress: float):
-	position = grid_pos.linear_interpolate(next_grid_pos, progress) * 10
+	position = grid_pos.linear_interpolate(next_grid_pos, progress) * 100
 
 func get_delta_pos_from_dir(dir):
   if dir == "ui_up":
